@@ -4,7 +4,7 @@ async function getByIdRestaurantController(req, res) {
   try {
     const { id } = req.params;
     const restaurant = await getByIdRestaurantService(id);
-    res.json(restaurant);
+    res.status(200).json(restaurant);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

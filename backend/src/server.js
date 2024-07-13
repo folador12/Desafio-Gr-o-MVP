@@ -10,6 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/api", router);
+app.use("/images", express.static("src/assets/images"));
 
 app.listen(PORT, () => {
   console.log(`Server is running in http://localhost:${PORT}`);
