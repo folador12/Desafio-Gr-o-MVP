@@ -3,11 +3,11 @@ import Image from "next/image";
 
 export const ProductCard = ({ avatar, name, description, price }) => {
   return (
-    <div className="max-w-xs rounded overflow-hidden shadow-lg m-4 bg-white">
-      <div className="relative w-full h-64">
-        <Image className="object-cover" src={avatar} alt={name} layout="fill" />
+    <div className="w-64 h-96 rounded overflow-hidden shadow-lg m-4 bg-white flex flex-col">
+      <div className="relative w-full flex-grow">
+        <Image className="object-cover" src={avatar} alt={name} fill priority />
       </div>
-      <div className="px-6 py-4">
+      <div className="px-6 py-4 flex-grow">
         <div className="font-bold text-xl mb-2">{name}</div>
         <p className="text-gray-700 text-base">{description}</p>
       </div>

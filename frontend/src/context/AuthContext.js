@@ -8,12 +8,9 @@ export const AuthContext = createContext({});
 const api = setupAPIClient();
 
 export function signOut() {
-  try {
-    destroyCookie(undefined, "token");
-    Router.push("/");
-  } catch {
-    console.log("erro ao deslogar");
-  }
+  destroyCookie(undefined, "token");
+  destroyCookie(undefined, "user");
+  Router.push("/");
 }
 
 export function AuthProvider({ children }) {

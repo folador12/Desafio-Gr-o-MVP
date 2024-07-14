@@ -69,15 +69,16 @@ export const Navbar = ({ onSearchChange, search }, ctx) => {
         </div>
       </nav>
       {isSearchVisible && (
-        <div className="fixed top-0 left-0 right-0 flex justify-center">
-          <div className="flex items-center p-2 rounded-full">
+        <div className="fixed top-0 left-0 right-0 flex justify-center mt-4">
+          <div className="flex items-center p-2 bg-white rounded-full shadow-lg">
             <input
               type="text"
               placeholder="Filtro"
-              className="p-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-gray-400"
+              className="p-2 pl-4 pr-10 w-full rounded-xl focus:outline-none"
               value={search}
               onChange={handleInputChange}
             />
+            <FaSearch className="m-2 text-xl text-gray-400" />
           </div>
         </div>
       )}

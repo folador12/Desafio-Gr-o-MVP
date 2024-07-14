@@ -11,15 +11,24 @@ export const RestaurantCard = ({ image, name, description, rating, id }) => {
   };
   return (
     <div
-      className="max-w-xs rounded overflow-hidden shadow-lg m-4 bg-white cursor-pointer"
+      className="flex flex-col justify-between w-64 h-96 rounded overflow-hidden shadow-lg m-4 bg-white cursor-pointer"
       onClick={handleRestaurantClick}
     >
-      <div className="relative w-full h-64">
-        <Image className="object-cover" src={image} alt={name} layout="fill" />
-      </div>
-      <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">{name}</div>
-        <p className="text-gray-700 text-base">{description}</p>
+      <div>
+        <div className="relative w-full h-40">
+          <Image
+            className="object-cover"
+            src={image}
+            alt={name}
+            fill
+            priority
+            sizes="160px"
+          />
+        </div>
+        <div className="px-6 py-4">
+          <div className="font-bold text-xl mb-2">{name}</div>
+          <p className="text-gray-700 text-base">{description}</p>
+        </div>
       </div>
       <div className="px-6 pt-4 pb-2 flex items-center">
         <FaStar className="text-yellow-500 mr-2" />

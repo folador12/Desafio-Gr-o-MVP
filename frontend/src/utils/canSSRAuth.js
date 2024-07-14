@@ -20,6 +20,7 @@ export function canSSRAuth(fn) {
     } catch (err) {
       if (err instanceof AuthTokenError) {
         destroyCookie(ctx, "token");
+        destroyCookie(ctx, "user");
       }
       return {
         redirect: "/",
